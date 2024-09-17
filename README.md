@@ -1,7 +1,10 @@
 
-# Project Setup and Execution Guide
+# ComPepper
+## Step 1: Set up the dataset
+You can download the dataset from https://www.ipb.uni-bonn.de/html/projects/shape_completion/shape_completion_challenge.zip. You should put the files in the ```sweetpepper_dataset```.
 
-## Step 1: TCoRe_sweet_try Setup
+
+## Step 2: TCoRe_sweet_try Setup
 
 First, create and activate a new Conda environment:
 ```bash
@@ -33,7 +36,7 @@ To generate test set point clouds:
 python tcore/scripts/test.py
 ```
 
-## Step 2: PointFT Setup
+## Step 3: PointFT Setup
 
 Create and set up another Conda environment:
 ```bash
@@ -63,7 +66,7 @@ To generate test set point clouds:
 python test_sp_generate.py -c PointFT/cfgs/PointFT.yaml
 ```
 
-## Step 3: Merging Point Clouds
+## Step 4: Merging Point Clouds
 
 To merge the point clouds from both setups:
 ```bash
@@ -71,4 +74,6 @@ python ./merge_pcd.py
 ```
 
 Ensure all paths and environment names are correctly set as per your system configuration.
+
+
 
