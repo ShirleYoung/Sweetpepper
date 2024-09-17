@@ -1,0 +1,121 @@
+BACKBONE: !!python/object/new:easydict.EasyDict
+  dictitems:
+    CHANNELS: &id001
+    - 32
+    - 32
+    - 64
+    - 128
+    - 256
+    - 256
+    - 128
+    - 96
+    - 96
+    CR: 2
+    DIMENSION: 3
+    FEAT_KEY: normals
+    INPUT_DIM: 6
+    INTERPOLATE: true
+    KNN_UP: 3
+    RESOLUTION: 0.0005
+  state:
+    CHANNELS: *id001
+    CR: 2
+    DIMENSION: 3
+    FEAT_KEY: normals
+    INPUT_DIM: 6
+    INTERPOLATE: true
+    KNN_UP: 3
+    RESOLUTION: 0.0005
+DECODER: !!python/object/new:easydict.EasyDict
+  dictitems:
+    AUX_OUTPUTS: true
+    CR: 0.125
+    DEC_BLOCKS: 3
+    DIM_FEEDFORWARD: 1024
+    FEATURE_LEVELS: 3
+    HIDDEN_DIM: 256
+    ITERATIVE_TEMPLATE: true
+    NHEADS: 8
+    OFFSET_SCALING: 2.5
+    POS_ENC: &id002 !!python/object/new:easydict.EasyDict
+      dictitems:
+        BASE: 2
+        DIMENSIONALITY: 3
+        MAX_FREQ: 10000
+      state:
+        BASE: 2
+        DIMENSIONALITY: 3
+        MAX_FREQ: 10000
+  state:
+    AUX_OUTPUTS: true
+    CR: 0.125
+    DEC_BLOCKS: 3
+    DIM_FEEDFORWARD: 1024
+    FEATURE_LEVELS: 3
+    HIDDEN_DIM: 256
+    ITERATIVE_TEMPLATE: true
+    NHEADS: 8
+    OFFSET_SCALING: 2.5
+    POS_ENC: *id002
+EXPERIMENT: !!python/object/new:easydict.EasyDict
+  dictitems:
+    ID: tcore_sweet_try
+  state:
+    ID: tcore_sweet_try
+FRUITS: !!python/object/new:easydict.EasyDict
+  dictitems:
+    AUGMENTATION: false
+    SENSOR: realsense
+    TEMPLATE_DIM: 3
+  state:
+    AUGMENTATION: false
+    SENSOR: realsense
+    TEMPLATE_DIM: 3
+LOGDIR: ''
+LOSS: !!python/object/new:easydict.EasyDict
+  dictitems:
+    WEIGHTS_CD: 1000000
+    WEIGHTS_REG_LAP: 0.1
+    WEIGHTS_REG_NOR: 0.1
+  state:
+    WEIGHTS_CD: 1000000
+    WEIGHTS_REG_LAP: 0.1
+    WEIGHTS_REG_NOR: 0.1
+MODEL: !!python/object/new:easydict.EasyDict
+  dictitems:
+    DATASET: FRUITS
+    FRUIT: SWEETPEPPER
+    OVERFIT: false
+    SMOOTH_ST: 10
+    SMOOTH_SW: 1
+  state:
+    DATASET: FRUITS
+    FRUIT: SWEETPEPPER
+    OVERFIT: false
+    SMOOTH_ST: 10
+    SMOOTH_SW: 1
+PATH: /home/sweetpepper_dataset/shape_completion_challenge
+TRAIN: !!python/object/new:easydict.EasyDict
+  dictitems:
+    AUG: true
+    BATCH_ACC: 1
+    BATCH_SIZE: 1
+    DECAY: 0.95
+    FREEZE_MODULES: &id003 []
+    LR: 0.0001
+    MAX_EPOCH: 500
+    NUM_WORKERS: 4
+    N_GPUS: 1
+    STEP: 50
+  state:
+    AUG: true
+    BATCH_ACC: 1
+    BATCH_SIZE: 1
+    DECAY: 0.95
+    FREEZE_MODULES: *id003
+    LR: 0.0001
+    MAX_EPOCH: 500
+    NUM_WORKERS: 4
+    N_GPUS: 1
+    STEP: 50
+git_commit_version: b'e162a9a'

@@ -1,0 +1,34 @@
+LOGDIR: ''
+PATH: '../sweetpepper_dataset/shape_completion_challenge'
+
+EXPERIMENT:
+    ID: tcore_sweet_try
+
+TRAIN:
+    AUG: true
+    BATCH_ACC: 1
+    BATCH_SIZE: 1
+    DECAY: 0.95
+    FREEZE_MODULES: []
+    LR: 0.0001
+    MAX_EPOCH: 500
+    NUM_WORKERS: 4
+    N_GPUS: 1
+    STEP: 50
+
+MODEL:    
+    DATASET: FRUITS
+    OVERFIT: False
+    FRUIT: SWEETPEPPER
+    SMOOTH_SW: 1
+    SMOOTH_ST: 10
+
+LOSS:
+    WEIGHTS_REG_LAP: 0.1
+    WEIGHTS_REG_NOR: 0.1
+    WEIGHTS_CD: 1000000
+
+FRUITS:
+    TEMPLATE_DIM: 3
+    SENSOR: 'realsense'
+    AUGMENTATION: False
